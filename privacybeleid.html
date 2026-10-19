@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacybeleid EnergieVriend</title>
+<meta name="description" content="Privacybeleid van EnergieVriend: je metingen en gegevens blijven op je eigen telefoon.">
+<link rel="icon" href="img/icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Layout: één leeskolom, zelfde opbouw als het privacybeleid van MediRust. */
+  :root {
+    --bg: #f4f8f1;
+    --surface: #ffffff;
+    --ink: #13261a;
+    --muted: #4c5f52;
+    --brand: #2e7d32;
+    --accent: #ef7d1a;
+    --line: #d4e4cf;
+    --font: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+      --brand: #81c784; --accent: #ffa65c; --line: #284230; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+    --brand: #81c784; --accent: #ffa65c; --line: #284230; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    padding-inline: 16px;
+    padding-block: 2.5rem 4rem;
+  }
+  main { max-width: 44rem; margin-inline: auto; }
+  a { color: var(--brand); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .terug { display: inline-block; margin-bottom: 1.5rem; font-size: 1rem; }
+  h1 { margin: 0 0 0.25rem; font-size: clamp(1.75rem, 5vw, 2.375rem); line-height: 1.2; color: var(--brand); }
+  .datum { margin: 0 0 2rem; color: var(--muted); font-size: 1rem; }
+  h2 { margin: 2.25rem 0 0.75rem; font-size: 1.375rem; line-height: 1.3; color: var(--brand); text-wrap: balance; }
+  p { margin: 0 0 0.9rem; }
+  ul { margin: 0 0 0.9rem; padding-left: 1.25rem; display: grid; gap: 0.45rem; }
+  .kort {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+  .kort p:last-child { margin-bottom: 0; }
+  strong { font-weight: 700; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 1rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <a class="terug" href="index.html">← Terug naar EnergieVriend</a>
+  <h1>Privacybeleid EnergieVriend</h1>
+  <p class="datum">Laatst bijgewerkt: 19 oktober 2026</p>
+
+  <div class="kort">
+    <p><strong>Het korte antwoord:</strong> alles wat je invult en meet, blijft op je eigen telefoon. Er is geen account en geen server van EnergieVriend. Wij kunnen niet bij je gegevens. De app haalt wel algemene gegevens van internet: stroomprijzen, het weer en de plaats bij je postcode.</p>
+  </div>
+
+  <h2>Wie maakt EnergieVriend</h2>
+  <p>EnergieVriend is een app van VDLIntelligence. Vragen over dit privacybeleid kun je mailen naar <a href="mailto:contact@energievriend.nl">contact@energievriend.nl</a>.</p>
+
+  <h2>Welke gegevens de app bewaart, op je telefoon</h2>
+  <ul>
+    <li><strong>Over je huis</strong>: wat je invult, zoals je postcode, woningtype, bouwjaar, isolatie, aantal personen, je verbruik en je energiecontract.</li>
+    <li><strong>Wat je hebt of overweegt</strong>: zonnepanelen, thuisbatterij, warmtepomp, boiler, elektrische auto en laadpaal, en je keuzes in het stappenplan.</li>
+    <li><strong>Je metingen</strong>: de meterstanden van stroom en gas, uit je P1-dongle of uit een bestand dat je zelf inleest.</li>
+    <li><strong>Opgehaalde gegevens</strong>: stroomprijzen en het weer, om je advies uit te rekenen.</li>
+    <li><strong>Volledige versie</strong>: of je de volledige versie gekocht hebt.</li>
+  </ul>
+  <p>Er is geen server, geen cloudopslag van EnergieVriend en geen account.</p>
+
+  <h2>Wat de app van internet haalt</h2>
+  <p>Om je advies te maken, haalt de app algemene gegevens op bij drie openbare diensten. Je metingen en je verbruik gaan daar <strong>nooit</strong> naartoe.</p>
+  <ul>
+    <li><strong>Stroomprijzen per uur</strong> bij SMARD, van de Bundesnetzagentur (Duitsland). De app stuurt daarbij niets over jou mee. Bron: Bundesnetzagentur | SMARD.de.</li>
+    <li><strong>De plaats bij je postcode</strong> bij PDOK, een dienst van de Nederlandse overheid. Daarvoor gaan alleen de vier cijfers van je postcode mee, zonder de letters en zonder huisnummer.</li>
+    <li><strong>Het weer</strong> (zon en temperatuur) bij de Deutscher Wetterdienst (DWD), de Duitse weerdienst: de verwachting en het weer van het afgelopen etmaal. De app zoekt op je telefoon het dichtstbijzijnde weerstation op en vraagt alleen het weer van dat station. Je postcode of plek gaat niet mee. Bron: Deutscher Wetterdienst.</li>
+  </ul>
+  <p>Het gemeten weer van eerder (vanaf 2023) zit in de app zelf. Dat komt van het KNMI; de app vraagt het KNMI niets. Bron: KNMI. Het KNMI is niet betrokken bij EnergieVriend.</p>
+  <p>Zoals bij elke verbinding met internet zien deze diensten het internetadres (IP-adres) van je telefoon. Voor wat zij daarmee doen, geldt hun eigen privacybeleid.</p>
+
+  <h2>Ook als de app dicht is</h2>
+  <p>Heb je een seintje aangezet of een P1-dongle gekoppeld, dan werkt de app af en toe even op de achtergrond. Hij haalt dan de stroomprijzen op (en zo nodig het weer) om je seintjes in te plannen, en leest elk uur je meterstand uit de P1-dongle. Daarbij gaat niets anders mee dan hierboven staat, en alles blijft op je telefoon.</p>
+
+  <h2>Je P1-dongle, in je eigen huis</h2>
+  <p>Heb je een P1-dongle, dan leest de app je meterstanden uit via je eigen wifi. Bij "Zoek mijn P1-dongle" zoekt de app de dongle op je thuisnetwerk. Dit verkeer blijft in je huis en gaat niet over internet. De app praat alleen met adressen op je thuisnetwerk.</p>
+
+  <h2>Bestanden, alleen als je dat zelf kiest</h2>
+  <ul>
+    <li><strong>Metingen inlezen</strong>: je kiest zelf een bestand, bijvoorbeeld van je energieleverancier. De app leest het op je telefoon en stuurt het nergens heen.</li>
+    <li><strong>Metingen bewaren als bestand</strong>: de app slaat je metingen op als bestand op de plek die jij kiest.</li>
+  </ul>
+
+  <h2>Betalen via Google Play</h2>
+  <p>De volledige versie koop je via Google Play. Die aankoop handelt Google af. EnergieVriend hoort alleen óf je de volledige versie hebt, en krijgt geen betaalgegevens te zien. Voor wat Google daarbij verwerkt, geldt het <a href="https://policies.google.com/privacy?hl=nl">privacybeleid van Google</a>.</p>
+
+  <h2>Back-up door Android</h2>
+  <p>Heb je op je telefoon de back-up naar je Google-account aangezet, dan neemt Android de gegevens van EnergieVriend daarin mee. Die back-up staat in je eigen Google-account, zodat je je metingen kunt terugzetten op een nieuwe telefoon. Volgens Google worden de gegevens versleuteld verstuurd (zie de <a href="https://support.google.com/android/answer/2819582?hl=nl">uitleg van Google over back-ups</a>). Wij hebben daar geen toegang toe. Je kunt de back-up uitzetten in de instellingen van je telefoon.</p>
+
+  <h2>Wat de app niet doet</h2>
+  <ul>
+    <li>Geen statistieken, tracking of advertenties.</li>
+    <li>Geen account: de app vraagt niet om je naam of e-mailadres.</li>
+    <li>Geen gegevens verkopen of delen met anderen. We verkopen ook geen producten of contracten.</li>
+  </ul>
+
+  <h2>Toestemmingen, en waarvoor</h2>
+  <ul>
+    <li><strong>Internet</strong>: voor de stroomprijzen, het weer en de plaats bij je postcode, zoals hierboven beschreven.</li>
+    <li><strong>Zoeken op je thuisnetwerk</strong>: om je P1-dongle te vinden.</li>
+    <li><strong>Meldingen</strong>: voor een seintje op een moment dat het je geld kan schelen, zoals het einde van de saldering, en de seintjes per apparaat die je zelf aanzet. Je kunt meldingen uitzetten.</li>
+    <li><strong>Trillen</strong>: bij een seintje met geluid.</li>
+    <li><strong>Kort op de achtergrond werken</strong>: voor het meten en het inplannen van seintjes als de app dicht is.</li>
+    <li><strong>Opstarten na een herstart</strong>: zodat ingeplande seintjes en het meten ook na het herstarten van je telefoon blijven werken.</li>
+    <li><strong>Betalen via Google Play</strong>: om de volledige versie te kunnen kopen.</li>
+  </ul>
+  <p>Geen van deze toestemmingen wordt gebruikt om gegevens over jou te verzamelen of te versturen.</p>
+
+  <h2>Hoe lang gegevens bewaard blijven, en verwijderen</h2>
+  <p>Je gegevens blijven bewaard zolang EnergieVriend op je telefoon staat. Je kunt alles in één keer wissen: via de instellingen van je telefoon bij EnergieVriend kiezen voor "Gegevens wissen", of de app verwijderen. Een eventuele back-up in je Google-account beheer je in de instellingen van dat account.</p>
+  <p>Omdat wij geen gegevens van je hebben, is er bij ons niets op te vragen, te verbeteren of te wissen. Heb je toch een vraag over je privacy, mail ons dan.</p>
+
+  <h2>Kinderen</h2>
+  <p>EnergieVriend is bedoeld voor volwassenen die keuzes maken over energie in hun eigen huis.</p>
+
+  <h2>Wijzigingen</h2>
+  <p>Verandert dit privacybeleid, dan staat de nieuwe versie op deze pagina, met de nieuwe datum bovenaan.</p>
+
+  <h2>Contact</h2>
+  <p>Vragen over dit privacybeleid of over EnergieVriend: <a href="mailto:contact@energievriend.nl">contact@energievriend.nl</a>.</p>
+
+  <footer>EnergieVriend is een app van <a href="https://vdlintelligence.nl">VDLIntelligence</a>.</footer>
+</main>
+</body>
+</html>

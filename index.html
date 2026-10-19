@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EnergieVriend</title>
+<meta name="description" content="Wat loont er voor jouw huis, en in welke volgorde? Eén onafhankelijk advies voor isolatie, zonnepanelen, batterij, warmtepomp en elektrisch rijden, dat met je eigen metingen preciezer wordt.">
+<link rel="icon" href="img/icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Eén leeskolom met blokken, zelfde opbouw als medirust.nl; kleuren van het app-icoon. */
+  :root {
+    --bg: #f4f8f1;
+    --surface: #ffffff;
+    --ink: #13261a;
+    --muted: #4c5f52;
+    --brand: #2e7d32;
+    --brand-ink: #ffffff;
+    --accent: #ef7d1a;
+    --soft: #e6f2e2;
+    --line: #d4e4cf;
+    --font: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+      --brand: #81c784; --brand-ink: #0e1a11; --accent: #ffa65c; --soft: #1b3221;
+      --line: #284230; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+    --brand: #81c784; --brand-ink: #0e1a11; --accent: #ffa65c; --soft: #1b3221;
+    --line: #284230; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    padding-inline: 16px;
+    padding-block: 2rem 4rem;
+  }
+  main { max-width: 52rem; margin-inline: auto; }
+  a { color: var(--brand); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { color: var(--brand); line-height: 1.25; text-wrap: balance; }
+  p { margin: 0 0 0.9rem; }
+  ul { margin: 0 0 0.9rem; padding-left: 1.25rem; display: grid; gap: 0.45rem; }
+  strong { font-weight: 700; }
+
+  /* Kop */
+  .merk { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--brand); margin-bottom: 2rem; }
+  .merk img { width: 44px; height: 44px; border-radius: 12px; }
+  .held { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center; }
+  .held h1 { margin: 0 0 0.75rem; font-size: clamp(2rem, 6vw, 3rem); }
+  .held .onder { font-size: 1.25rem; color: var(--muted); }
+  .held .vonk { width: min(240px, 60vw); border-radius: 28px; justify-self: center; }
+  @media (min-width: 720px) {
+    .held { grid-template-columns: 1.6fr 1fr; }
+  }
+  .knop {
+    display: inline-block; background: var(--brand); color: var(--brand-ink);
+    text-decoration: none; font-weight: 700; padding: 0.8rem 1.5rem; border-radius: 999px;
+    margin: 0.5rem 0 0.75rem;
+  }
+  .knop:hover { filter: brightness(1.08); }
+  .prijsregel { font-size: 1rem; color: var(--muted); margin-bottom: 1rem; }
+  .labels { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .labels li { background: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 1rem; }
+
+  /* Blokken */
+  section { margin-top: 3rem; }
+  section > h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); margin: 0 0 1rem; }
+  .blok { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; }
+  .blok p:last-child, .blok ul:last-child { margin-bottom: 0; }
+  .accent { border-left: 6px solid var(--accent); }
+
+  /* Schermen */
+  .schermen { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+  .schermen figure { margin: 0; }
+  .schermen img, .plek {
+    width: 100%; aspect-ratio: 9 / 19; border-radius: 20px; border: 1px solid var(--line);
+    background: var(--soft); object-fit: cover;
+  }
+  .plek { display: grid; place-items: center; color: var(--muted); font-size: 0.95rem; text-align: center; padding: 1rem; }
+  .schermen figcaption { font-size: 1rem; color: var(--muted); margin-top: 0.5rem; }
+
+  /* Apparaten */
+  .apparaten { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .apparaten li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 1rem; }
+
+  /* Meten */
+  .niveaus { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .niveaus .blok h3 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+
+  /* Gratis en volledig */
+  .versies { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .versies h3 { margin: 0 0 0.25rem; font-size: 1.3rem; }
+  .versies .prijs { color: var(--muted); margin-bottom: 0.75rem; }
+  .versies .volledig { border: 2px solid var(--brand); }
+
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 1rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="merk"><img src="img/icoon.png" alt="">EnergieVriend</div>
+
+  <div class="held">
+    <div>
+      <h1>Wat loont er voor jóuw huis, en in welke volgorde?</h1>
+      <p class="onder">Eén onafhankelijk advies voor isolatie, zonnepanelen, batterij en warmtepomp. Met je eigen metingen wordt het steeds preciezer.</p>
+      <a class="knop" href="https://play.google.com/store/apps/details?id=com.energievriend.app">Download in Google Play</a>
+      <p class="prijsregel">Gratis te gebruiken. Volledige versie eenmalig € 19,99 geen abonnement.</p>
+      <ul class="labels">
+        <li>Geen account, geen cloud</li>
+        <li>Onafhankelijk</li>
+        <li>Ook zonder P1-dongle</li>
+      </ul>
+    </div>
+    <img class="vonk" src="img/vonk.png" alt="Vonk, de vos van EnergieVriend, met een zonnepaneel op de kop">
+  </div>
+
+  <section>
+    <h2>Zo ziet EnergieVriend eruit</h2>
+    <div class="schermen">
+      <!-- Schermafbeeldingen volgen, samen met de store-screenshots (emulator, verzonnen gegevens). -->
+      <figure><div class="plek">Schermafbeelding volgt</div><figcaption>Je plan stap voor stap: wat eerst, en wat elke stap oplevert.</figcaption></figure>
+      <figure><div class="plek">Schermafbeelding volgt</div><figcaption>Nu slim: wanneer stroom vandaag en morgen goedkoop is.</figcaption></figure>
+      <figure><div class="plek">Schermafbeelding volgt</div><figcaption>Verwacht en gemeten: pakt je aankoop uit zoals verwacht?</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eén plan voor je hele huis</h2>
+    <div class="blok">
+      <ul class="apparaten">
+        <li>Isolatie</li>
+        <li>Zonnepanelen</li>
+        <li>Thuisbatterij</li>
+        <li>Stekkerbatterij</li>
+        <li>Warmtepomp</li>
+        <li>Warmtepompboiler</li>
+        <li>Elektrische auto</li>
+        <li>Laadpaal</li>
+      </ul>
+      <p>De meeste rekenhulpen kijken naar één ding tegelijk, meestal de batterij. Maar in je huis hangt alles samen: een batterij, een boiler en een auto willen dezelfde zonnestroom, en na isolatie levert een warmtepomp weer anders op.</p>
+      <p>EnergieVriend rekent het samen door, uur voor uur over een heel jaar. Je ziet wat er loont, in welke volgorde, wat het kost en wanneer je het terugverdient. Wat je al hebt vink je af, en de volgorde kun je zelf schuiven.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rijd je elektrisch, of denk je erover?</h2>
+    <div class="blok">
+      <ul>
+        <li><strong>Elektrisch gaan rijden?</strong> Zie wat het scheelt ten opzichte van tanken.</li>
+        <li><strong>Slim laden:</strong> laad op je eigen zonnestroom, of in de goedkoopste uren van vandaag en morgen.</li>
+        <li><strong>Laadpaal thuis:</strong> laad je nu openbaar en heb je een eigen oprit? Zie of een eigen laadpaal loont.</li>
+        <li><strong>Waar laad je meestal?</strong> Thuis, op je werk of onderweg: het advies past zich aan.</li>
+      </ul>
+      <p>EnergieVriend geeft advies; de app stuurt je auto of laadpaal niet zelf aan.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>De saldering stopt op 1 januari 2027</h2>
+    <div class="blok accent">
+      <p>Heb je zonnepanelen, dan mag je de stroom die je teruglevert nu nog wegstrepen tegen wat je gebruikt. Vanaf 2027 stopt dat. EnergieVriend laat zien wat dat voor jou betekent en wat je eraan kunt doen: meer zelf gebruiken, een batterij, slim laden, of juist niets.</p>
+      <p>Kost het je merkbaar geld, dan krijg je een maand van tevoren een seintje, zodat je nog iets kunt doen.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zie of het uitpakt</h2>
+    <div class="blok">
+      <p>Advies is mooi, maar levert je aankoop op wat je verwachtte? Na een aanpassing zet EnergieVriend de verwachting naast wat je meter meet: voor zonnepanelen, batterij en slim laden, en voor isolatie, warmtepomp en boiler, met het weer verrekend.</p>
+      <p>En bij <strong>Wat je betaalde</strong> zie je wat je stroom echt gekost heeft.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hoe meer je meet, hoe preciezer</h2>
+    <div class="niveaus">
+      <div class="blok">
+        <h3>Zonder metingen</h3>
+        <p>Het advies rekent met je jaarverbruik en gemiddelden voor een huis als het jouwe. Een goed begin, maar algemeen.</p>
+      </div>
+      <div class="blok">
+        <h3>Met een bestand</h3>
+        <p>Download je verbruik bij je energieleverancier of een meterportaal en lees het in. Zo zie je wat je betaalde, en hoe je gasverbruik verandert.</p>
+      </div>
+      <div class="blok">
+        <h3>Met een P1-dongle</h3>
+        <p>Een dongle op je slimme meter meet elk uur. Dan leert de app jouw dagpatroon en de opbrengst van je panelen, en wordt het advies echt persoonlijk.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Onafhankelijk en privé</h2>
+    <div class="blok">
+      <ul>
+        <li><strong>Onafhankelijk advies, zonder belang bij je keuze.</strong></li>
+        <li><strong>Geen account, geen cloud.</strong> Je metingen en alles wat je invult blijven op je telefoon.</li>
+        <li>De app haalt alleen stroomprijzen en het weer op. <strong>Je metingen gaan nooit over internet.</strong></li>
+        <li>Geen advertenties, geen tracking.</li>
+      </ul>
+      <p>Meer hierover in het <a href="privacybeleid.html">privacybeleid</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gratis, of de volledige versie</h2>
+    <div class="versies">
+      <div class="blok">
+        <h3>Gratis</h3>
+        <p class="prijs">Altijd</p>
+        <ul>
+          <li>Je advies: wat loont, in welke volgorde, en de terugverdientijd</li>
+          <li>Nu slim: stroomprijzen en slim laden</li>
+          <li>Metingen verzamelen met een dongle of een bestand</li>
+        </ul>
+      </div>
+      <div class="blok volledig">
+        <h3>Volledige versie</h3>
+        <p class="prijs">Eenmalig € 19,99 geen abonnement</p>
+        <ul>
+          <li>Wat elke stap per jaar oplevert, en hoe dat berekend is</li>
+          <li>Energieadvies op basis van je eigen metingen</li>
+          <li>Wat je betaalde</li>
+          <li>Verwacht en gemeten</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="privacybeleid.html">Privacybeleid</a> · <a href="mailto:contact@energievriend.nl">contact@energievriend.nl</a> · EnergieVriend is een app van <a href="https://vdlintelligence.nl">VDLIntelligence</a>.
+  </footer>
+</main>
+</body>
+</html>
