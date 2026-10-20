@@ -85,7 +85,7 @@
   .schermen { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
   .schermen figure { margin: 0; }
   .schermen img, .plek {
-    width: 100%; aspect-ratio: 9 / 19; border-radius: 20px; border: 1px solid var(--line);
+    width: 100%; aspect-ratio: 1 / 2; border-radius: 20px; border: 1px solid var(--line);
     background: var(--soft); object-fit: cover;
   }
   .plek { display: grid; place-items: center; color: var(--muted); font-size: 0.95rem; text-align: center; padding: 1rem; }
@@ -130,10 +130,10 @@
   <section>
     <h2>Zo ziet EnergieVriend eruit</h2>
     <div class="schermen">
-      <!-- Schermafbeeldingen volgen, samen met de store-screenshots (emulator, verzonnen gegevens). -->
-      <figure><div class="plek">Schermafbeelding volgt</div><figcaption>Je plan stap voor stap: wat eerst, en wat elke stap oplevert.</figcaption></figure>
-      <figure><div class="plek">Schermafbeelding volgt</div><figcaption>Nu slim: wanneer stroom vandaag en morgen goedkoop is.</figcaption></figure>
-      <figure><div class="plek">Schermafbeelding volgt</div><figcaption>Verwacht en gemeten: pakt je aankoop uit zoals verwacht?</figcaption></figure>
+      <!-- Store-screenshots (emulator, verzonnen huis), verkleind naar 540 px. -->
+      <figure><img src="img/scherm-besparing.webp" alt="Scherm Besparing met het plan stap voor stap" loading="lazy" width="540" height="1080"><figcaption>Je plan stap voor stap: wat eerst, en wat elke stap oplevert.</figcaption></figure>
+      <figure><img src="img/scherm-nu-slim.webp" alt="Scherm Nu slim met de stroomprijzen van vandaag en morgen" loading="lazy" width="540" height="1080"><figcaption>Nu slim: wanneer stroom vandaag en morgen goedkoop is.</figcaption></figure>
+      <figure><img src="img/scherm-verwacht-gemeten.webp" alt="Scherm Verwacht en gemeten" loading="lazy" width="540" height="1080"><figcaption>Verwacht en gemeten: pakt je aankoop uit zoals verwacht?</figcaption></figure>
     </div>
   </section>
 
