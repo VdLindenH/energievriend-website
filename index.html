@@ -82,10 +82,10 @@
   .accent { border-left: 6px solid var(--accent); }
 
   /* Schermen */
-  .schermen { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+  .schermen { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 260px)); justify-content: center; gap: 1.25rem; }
   .schermen figure { margin: 0; }
   .schermen img, .plek {
-    width: 100%; aspect-ratio: 1 / 2; border-radius: 20px; border: 1px solid var(--line);
+    width: 100%; height: auto; aspect-ratio: 1 / 2; border-radius: 20px; border: 1px solid var(--line);
     background: var(--soft); object-fit: cover;
   }
   .plek { display: grid; place-items: center; color: var(--muted); font-size: 0.95rem; text-align: center; padding: 1rem; }
