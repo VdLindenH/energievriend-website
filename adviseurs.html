@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EnergieVriend Pro voor adviseurs en energiecoaches</title>
+<meta name="description" content="EnergieVriend Pro: reken bij het huisbezoek uit wat loont en in welke volgorde, met uw eigen prijzen, en geef uw klant een rapport in uw eigen huisstijl. De gegevens van uw klanten blijven in uw eigen browser.">
+<link rel="icon" href="img/icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Zelfde opbouw en kleuren als de pagina van de app. */
+  :root {
+    --bg: #f4f8f1;
+    --surface: #ffffff;
+    --ink: #13261a;
+    --muted: #4c5f52;
+    --brand: #2e7d32;
+    --brand-ink: #ffffff;
+    --accent: #ef7d1a;
+    --soft: #e6f2e2;
+    --line: #d4e4cf;
+    --font: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+      --brand: #81c784; --brand-ink: #0e1a11; --accent: #ffa65c; --soft: #1b3221;
+      --line: #284230; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+    --brand: #81c784; --brand-ink: #0e1a11; --accent: #ffa65c; --soft: #1b3221;
+    --line: #284230; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    padding-inline: 16px;
+    padding-block: 2rem 4rem;
+  }
+  main { max-width: 52rem; margin-inline: auto; }
+  a { color: var(--brand); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { color: var(--brand); line-height: 1.25; text-wrap: balance; }
+  p { margin: 0 0 0.9rem; }
+  ul { margin: 0 0 0.9rem; padding-left: 1.25rem; display: grid; gap: 0.45rem; }
+  strong { font-weight: 700; }
+
+  .merk { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--brand); margin-bottom: 2rem; }
+  .merk img { width: 44px; height: 44px; border-radius: 12px; }
+  .merk a { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; color: inherit; }
+  .merk .pro { color: var(--ink); }
+  h1 { margin: 0 0 0.75rem; font-size: clamp(2rem, 6vw, 3rem); }
+  .onder { font-size: 1.25rem; color: var(--muted); }
+  .knoppen { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1rem 0; }
+  .knop {
+    display: inline-block; background: var(--brand); color: var(--brand-ink);
+    text-decoration: none; font-weight: 700; padding: 0.8rem 1.5rem; border-radius: 999px;
+  }
+  .knop:hover { filter: brightness(1.08); }
+  .knop.rand { background: transparent; color: var(--brand); border: 2px solid var(--brand); padding: calc(0.8rem - 2px) calc(1.5rem - 2px); }
+  .labels { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .labels li { background: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 1rem; }
+
+  section { margin-top: 3rem; }
+  section > h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); margin: 0 0 1rem; }
+  .blok { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; }
+  .blok p:last-child, .blok ul:last-child { margin-bottom: 0; }
+  .blok h3 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+  .drie { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+
+  figure { margin: 0; }
+  figcaption { font-size: 1rem; color: var(--muted); margin-top: 0.5rem; }
+  .beeld { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: var(--soft); display: block; }
+  .scherm { display: grid; grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
+  @media (min-width: 720px) { .scherm { grid-template-columns: 2.4fr 1fr; } }
+  .rapport { display: grid; grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
+  @media (min-width: 720px) { .rapport { grid-template-columns: 1fr 1.1fr; } }
+  .rapport .beeld { border-radius: 8px; }
+
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 1rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="merk"><a href="index.html"><img src="img/icoon.png" alt="">EnergieVriend <span class="pro">Pro</span></a></div>
+
+  <h1>Energieadvies voor adviseurs en energiecoaches</h1>
+  <p class="onder">Reken bij het huisbezoek uit wat er voor deze woning loont en in welke volgorde, met uw eigen prijzen. Geef uw klant daarna een rapport in uw eigen huisstijl.</p>
+  <div class="knoppen">
+    <a class="knop" href="https://pro.energievriend.nl">Probeer 30 dagen</a>
+    <a class="knop rand" href="mailto:contact@energievriend.nl?subject=Licentie%20EnergieVriend%20Pro">Een licentie aanvragen</a>
+  </div>
+  <ul class="labels">
+    <li>Geen account, geen cloud</li>
+    <li>Uw prijzen, uw logo</li>
+    <li>Op laptop, tablet en telefoon</li>
+  </ul>
+
+  <section>
+    <h2>Zo ziet het eruit</h2>
+    <div class="scherm">
+      <figure>
+        <img class="beeld" src="img/pro-laptop.webp" width="1280" height="800" alt="Het scherm van een klant in EnergieVriend Pro: een stappenplan met per stap de kosten, de terugverdientijd en het bedrag per jaar" loading="lazy">
+        <figcaption>Een klant op de laptop, met verzonnen gegevens.</figcaption>
+      </figure>
+      <figure>
+        <img class="beeld" src="img/pro-telefoon.webp" width="390" height="844" alt="Dezelfde klant op een telefoon" loading="lazy">
+        <figcaption>Dezelfde klant op de telefoon.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wat u er mee doet</h2>
+    <div class="drie">
+      <div class="blok">
+        <h3>Eén plan per woning</h3>
+        <p>U vult de woning in en ziet direct welke stappen zich terugverdienen, in welke volgorde, wat ze kosten en wat ze per jaar opleveren. Achter het ⓘ bij elke stap staat hoe er is gerekend.</p>
+      </div>
+      <div class="blok">
+        <h3>Uw prijzen</h3>
+        <p>Zet uw eigen standaardprijzen in, en vul per klant het bedrag uit een offerte in. Bij elke stap ziet u of het uw prijs is of een richtprijs.</p>
+      </div>
+      <div class="blok">
+        <h3>Uw rapport</h3>
+        <p>Een PDF met uw naam, contactgegevens en logo. "Onafhankelijk advies" staat er alleen op als u dat zelf aanzet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Voorbeeldrapport</h2>
+    <div class="rapport">
+      <figure>
+        <img class="beeld" src="img/pro-rapport.webp" width="827" height="1170" alt="Een voorbeeldrapport van EnergieVriend Pro voor een verzonnen familie, met het logo van een verzonnen adviesbedrijf" loading="lazy">
+      </figure>
+      <div>
+        <p>Zo ziet het rapport voor uw klant eruit, met een verzonnen klant en een verzonnen adviesbedrijf. Het logo, de naam en de toelichting zijn die van u.</p>
+        <p><a class="knop" href="voorbeeldrapport-energievriend-pro.pdf">Open het voorbeeldrapport (PDF)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Uw klantgegevens blijven bij u</h2>
+    <div class="blok">
+      <p>Er is geen account en geen server van ons waar uw klantgegevens heen gaan. Alles staat in uw eigen browser. Wij kunnen er niet bij.</p>
+      <p>Omdat de gegevens alleen op uw apparaat staan, maakt u zelf af en toe een back-up. Die is standaard versleuteld met een wachtwoord dat u kiest. Pro herinnert u daar rustig aan.</p>
+      <p>Meer in het <a href="https://pro.energievriend.nl/privacy.html">privacybeleid</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eerlijk over de bedragen</h2>
+    <div class="blok">
+      <p>De bedragen zijn schattingen op basis van gemiddelden en wat u zelf invult. Het is geen offerte en geen belofte van een besparing. U blijft verantwoordelijk voor het advies dat u uw klant geeft. Zie de <a href="https://pro.energievriend.nl/voorwaarden.html">gebruiksvoorwaarden</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proberen en licentie</h2>
+    <div class="blok">
+      <ul>
+        <li>U probeert Pro 30 dagen, zonder iets te betalen of aan te maken.</li>
+        <li>Daarna werkt Pro met een licentie voor één adviseur of bedrijf, voor een jaar.</li>
+        <li>De prijs en de betaling spreken we af bij de aanvraag, per e-mail.</li>
+      </ul>
+      <div class="knoppen">
+        <a class="knop" href="https://pro.energievriend.nl">Probeer 30 dagen</a>
+        <a class="knop rand" href="mailto:contact@energievriend.nl?subject=Licentie%20EnergieVriend%20Pro">Een licentie aanvragen</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="index.html">EnergieVriend voor thuis</a> · <a href="https://pro.energievriend.nl/privacy.html">Privacybeleid Pro</a> · <a href="https://pro.energievriend.nl/voorwaarden.html">Gebruiksvoorwaarden Pro</a> · <a href="mailto:contact@energievriend.nl">contact@energievriend.nl</a><br>
+    EnergieVriend is een product van <a href="https://vdlintelligence.nl">VDLIntelligence</a> (KvK 66394597, btw NL002029177B58).
+  </footer>
+</main>
+</body>
+</html>
