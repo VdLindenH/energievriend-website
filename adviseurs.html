@@ -73,6 +73,7 @@
   }
   .knop:hover { filter: brightness(1.08); }
   .knop.rand { background: transparent; color: var(--brand); border: 2px solid var(--brand); padding: calc(0.8rem - 2px) calc(1.5rem - 2px); }
+  .voorwie { margin-top: 1.25rem; padding: 0.9rem 1.1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); font-size: 1rem; }
   .labels { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .labels li { background: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 1rem; }
 
@@ -117,16 +118,18 @@
     <li>Op laptop, tablet en telefoon</li>
   </ul>
 
+  <p class="voorwie"><strong>Voor wie is dit?</strong> EnergieVriend Pro is voor professionals die voor anderen rekenen: u adviseert de bewoner van een woning, of het bestuur van een VvE. Wilt u zelf weten wat er loont voor uw eigen huis? Dan is er de gratis app: <a href="index.html">EnergieVriend voor thuis</a>.</p>
+
   <section>
     <h2>Zo ziet het eruit</h2>
     <div class="scherm">
       <figure>
-        <img class="beeld" src="img/pro-laptop.webp" width="1280" height="800" alt="Het scherm van een klant in EnergieVriend Pro: een stappenplan met per stap de kosten, de terugverdientijd en het bedrag per jaar" loading="lazy">
-        <figcaption>Een woning op de laptop, met verzonnen gegevens. In Pro laadt u zo'n voorbeeld met één knop.</figcaption>
+        <img class="beeld" src="img/pro-laptop.webp" width="1280" height="800" alt="De lijst met VvE's in EnergieVriend Pro, met per VvE de fase en de volgende stap" loading="lazy">
+        <figcaption>De lijst met VvE's op de laptop, met verzonnen gegevens. In Pro laadt u een voorbeeld met één knop.</figcaption>
       </figure>
       <figure>
-        <img class="beeld" src="img/pro-telefoon.webp" width="390" height="844" alt="Dezelfde klant op een telefoon" loading="lazy">
-        <figcaption>Dezelfde woning op de telefoon.</figcaption>
+        <img class="beeld" src="img/pro-telefoon.webp" width="390" height="844" alt="Dezelfde lijst met VvE's op een telefoon" loading="lazy">
+        <figcaption>Dezelfde lijst op de telefoon.</figcaption>
       </figure>
     </div>
   </section>
@@ -135,16 +138,16 @@
     <h2>Wat u er mee doet</h2>
     <div class="drie">
       <div class="blok">
-        <h3>Eén plan per woning</h3>
-        <p>U vult de woning in en ziet direct welke stappen zich terugverdienen, in welke volgorde, wat ze kosten en wat ze per jaar opleveren. Achter het ⓘ bij elke stap staat hoe er is gerekend.</p>
+        <h3>Eén plan per klant</h3>
+        <p>U vult de woning of de VvE van uw klant in en ziet direct wat er loont en in welke volgorde, wat het kost en wat het per jaar oplevert. Achter het ⓘ staat hoe er is gerekend.</p>
       </div>
       <div class="blok">
         <h3>Uw prijzen</h3>
-        <p>Zet uw eigen standaardprijzen in, en vul per klant het bedrag uit een offerte in. Bij elke stap ziet u of het uw prijs is of een richtprijs.</p>
+        <p>Zet uw eigen standaardprijzen in, en vul per klant het bedrag uit een offerte in. U ziet of het uw prijs is of een richtprijs. Bij een VvE staat de offerteprijs naast de richtprijzen.</p>
       </div>
       <div class="blok">
         <h3>Uw rapport</h3>
-        <p>Een PDF met uw naam, contactgegevens en logo. "Onafhankelijk advies" staat er alleen op als u dat zelf aanzet.</p>
+        <p>Een PDF met uw naam, contactgegevens en logo, voor de klant of als ALV-rapport voor een VvE. "Onafhankelijk advies" staat er alleen op als u dat zelf aanzet.</p>
       </div>
     </div>
   </section>
@@ -155,6 +158,10 @@
       <p>Met de uitbreiding Pro Gebouwen rekent u zonnepanelen door op het dak van een appartementencomplex. Op de algemene meter of per appartement, met wat het kost en oplevert per appartement. U maakt er een rapport voor de ledenvergadering mee, met een blad per appartement.</p>
       <p>U probeert Pro Gebouwen 30 dagen, op het moment dat u het nodig heeft. Bedrijfsdaken komen er later bij.</p>
     </div>
+    <figure style="margin-top: 1rem;">
+      <img class="beeld" src="img/pro-vve-detail.webp" width="1280" height="1150" alt="Een VvE in EnergieVriend Pro: gebouw, dak en algemene meter, en de drie varianten naast elkaar met investering, opbrengst en terugverdientijd" loading="lazy">
+      <figcaption><strong>Eén VvE.</strong> Gebouw, dak en meter, en de varianten naast elkaar: wat het kost, wat het per jaar oplevert en wanneer het is terugverdiend.</figcaption>
+    </figure>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
       <figure>
         <img class="beeld" src="img/pro-vve-aandachtspunten.webp" width="1280" height="1000" alt="Het scherm Aandachtspunten van een VvE in EnergieVriend Pro: wat al is meegerekend en acht tegels met wat u nog navraagt, zoals dak, installatie en verzekering" loading="lazy">
