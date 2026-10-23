@@ -55,7 +55,20 @@
   strong { font-weight: 700; }
 
   /* Kop */
-  .merk { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--brand); margin-bottom: 2rem; }
+  .kop { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; margin-bottom: 2rem; }
+  .menu { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 1rem; }
+  .menu a { text-decoration: none; padding: 0.4rem 1rem; border-radius: 999px; border: 2px solid transparent; font-weight: 700; }
+  .menu a[aria-current="page"] { background: var(--soft); color: var(--ink); }
+  .menu a.pro { border-color: var(--brand); }
+  .menu a.pro:hover { background: var(--soft); }
+  .merk { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--brand); margin-bottom: 0; }
+
+  /* Verwijzing naar Pro */
+  .prokaart { display: grid; grid-template-columns: 1fr; gap: 1.25rem; align-items: center; border: 2px solid var(--brand); }
+  @media (min-width: 720px) { .prokaart { grid-template-columns: 1.3fr 1fr; } }
+  .prokaart h2 { margin: 0 0 0.5rem; font-size: clamp(1.4rem, 4vw, 1.75rem); }
+  .prokaart .klein { font-size: 0.95rem; color: var(--muted); margin-top: 0.5rem; }
+  .prokaart img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); display: block; }
   .merk img { width: 44px; height: 44px; border-radius: 12px; }
   .held { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center; }
   .held h1 { margin: 0 0 0.75rem; font-size: clamp(2rem, 6vw, 3rem); }
@@ -110,7 +123,13 @@
 </head>
 <body>
 <main>
-  <div class="merk"><img src="img/icoon.png" alt="">EnergieVriend</div>
+  <header class="kop">
+    <div class="merk"><img src="img/icoon.png" alt="">EnergieVriend</div>
+    <nav class="menu" aria-label="Hoofdmenu">
+      <a href="index.html" aria-current="page">Voor thuis</a>
+      <a href="adviseurs.html" class="pro">Voor adviseurs en VvE's</a>
+    </nav>
+  </header>
 
   <div class="held">
     <div>
@@ -126,6 +145,18 @@
     </div>
     <img class="vonk" src="img/vonk.png" alt="Vonk, de vos van EnergieVriend, met een zonnepaneel op de kop">
   </div>
+
+  <section aria-labelledby="pro-kop">
+    <div class="blok prokaart">
+      <div>
+        <h2 id="pro-kop">Werkt u als energieadviseur, coach of voor een VvE?</h2>
+        <p>Dan is er <strong>EnergieVriend Pro</strong>: dezelfde berekening als de app, maar bedoeld voor uw werk. Reken bij het huisbezoek uit wat er loont voor een woning, met uw eigen prijzen en een rapport in uw eigen huisstijl. Ook voor zonnepanelen op het dak van een appartementencomplex.</p>
+        <p><a class="knop" href="adviseurs.html">Bekijk EnergieVriend Pro</a></p>
+        <p class="klein">Draait in uw browser, 30 dagen proberen. De app hieronder is voor uw eigen huis.</p>
+      </div>
+      <img src="img/pro-laptop.webp" width="1280" height="800" alt="EnergieVriend Pro op een laptop: het stappenplan van een woning met per stap de kosten en de opbrengst" loading="lazy">
+    </div>
+  </section>
 
   <section>
     <h2>Zo ziet EnergieVriend eruit</h2>
@@ -241,7 +272,7 @@
   </section>
 
   <footer>
-    <a href="adviseurs.html">Voor adviseurs</a> · <a href="privacybeleid.html">Privacybeleid</a> · <a href="mailto:contact@energievriend.nl">contact@energievriend.nl</a> · EnergieVriend is een app van <a href="https://vdlintelligence.nl">VDLIntelligence</a>.
+    <a href="adviseurs.html">EnergieVriend Pro voor adviseurs en VvE's</a> ·<a href="privacybeleid.html">Privacybeleid</a> · <a href="mailto:contact@energievriend.nl">contact@energievriend.nl</a> · EnergieVriend is een app van <a href="https://vdlintelligence.nl">VDLIntelligence</a>.
   </footer>
 </main>
 </body>

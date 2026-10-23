@@ -54,7 +54,13 @@
   ul { margin: 0 0 0.9rem; padding-left: 1.25rem; display: grid; gap: 0.45rem; }
   strong { font-weight: 700; }
 
-  .merk { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--brand); margin-bottom: 2rem; }
+  .kop { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; margin-bottom: 2rem; }
+  .menu { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 1rem; }
+  .menu a { text-decoration: none; padding: 0.4rem 1rem; border-radius: 999px; border: 2px solid transparent; font-weight: 700; }
+  .menu a[aria-current="page"] { background: var(--soft); color: var(--ink); }
+  .menu a.thuis { border-color: var(--brand); }
+  .menu a.thuis:hover { background: var(--soft); }
+  .merk { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--brand); margin-bottom: 0; }
   .merk img { width: 44px; height: 44px; border-radius: 12px; }
   .merk a { text-decoration: none; display: flex; align-items: center; gap: 0.75rem; color: inherit; }
   .merk .pro { color: var(--ink); }
@@ -91,13 +97,19 @@
 </head>
 <body>
 <main>
-  <div class="merk"><a href="index.html"><img src="img/icoon.png" alt="">EnergieVriend <span class="pro">Pro</span></a></div>
+  <header class="kop">
+    <div class="merk"><a href="adviseurs.html"><img src="img/icoon.png" alt="">EnergieVriend <span class="pro">Pro</span></a></div>
+    <nav class="menu" aria-label="Hoofdmenu">
+      <a href="index.html" class="thuis">Voor thuis</a>
+      <a href="adviseurs.html" aria-current="page">Voor adviseurs en VvE's</a>
+    </nav>
+  </header>
 
   <h1>Energieadvies voor adviseurs en energiecoaches</h1>
-  <p class="onder">Reken bij het huisbezoek uit wat er voor deze woning loont en in welke volgorde, met uw eigen prijzen. Geef uw klant daarna een rapport in uw eigen huisstijl.</p>
+  <p class="onder">Reken bij het huisbezoek uit wat er voor deze woning loont en in welke volgorde, met uw eigen prijzen. Geef uw klant daarna een rapport in uw eigen huisstijl. Ook voor zonnepanelen op het dak van een VvE.</p>
   <div class="knoppen">
     <a class="knop" href="https://pro.energievriend.nl">Probeer 30 dagen</a>
-    <a class="knop rand" href="mailto:contact@energievriend.nl?subject=Licentie%20EnergieVriend%20Pro">Een licentie aanvragen</a>
+    <a class="knop rand" href="https://pro.energievriend.nl/bestel.html">Licentie bestellen</a>
   </div>
   <ul class="labels">
     <li>Geen account, geen cloud</li>
@@ -110,11 +122,11 @@
     <div class="scherm">
       <figure>
         <img class="beeld" src="img/pro-laptop.webp" width="1280" height="800" alt="Het scherm van een klant in EnergieVriend Pro: een stappenplan met per stap de kosten, de terugverdientijd en het bedrag per jaar" loading="lazy">
-        <figcaption>Een klant op de laptop, met verzonnen gegevens.</figcaption>
+        <figcaption>Een woning op de laptop, met verzonnen gegevens. In Pro laadt u zo'n voorbeeld met één knop.</figcaption>
       </figure>
       <figure>
         <img class="beeld" src="img/pro-telefoon.webp" width="390" height="844" alt="Dezelfde klant op een telefoon" loading="lazy">
-        <figcaption>Dezelfde klant op de telefoon.</figcaption>
+        <figcaption>Dezelfde woning op de telefoon.</figcaption>
       </figure>
     </div>
   </section>
@@ -140,8 +152,18 @@
   <section>
     <h2>Ook voor VvE's: Pro Gebouwen</h2>
     <div class="blok">
-      <p>Met de uitbreiding Pro Gebouwen rekent u zonnepanelen door op het dak van een appartementencomplex. Op de algemene meter of per appartement, met wat het kost en oplevert per appartement, de aandachtspunten vóór de offerte en offertes naast elkaar. U maakt er een rapport voor de ledenvergadering mee, met een blad per appartement.</p>
-      <p>U probeert Pro Gebouwen 30 dagen, op het moment dat u het nodig heeft.</p>
+      <p>Met de uitbreiding Pro Gebouwen rekent u zonnepanelen door op het dak van een appartementencomplex. Op de algemene meter of per appartement, met wat het kost en oplevert per appartement. U maakt er een rapport voor de ledenvergadering mee, met een blad per appartement.</p>
+      <p>U probeert Pro Gebouwen 30 dagen, op het moment dat u het nodig heeft. Bedrijfsdaken komen er later bij.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1rem;">
+      <figure>
+        <img class="beeld" src="img/pro-vve-aandachtspunten.webp" width="1280" height="1000" alt="Het scherm Aandachtspunten van een VvE in EnergieVriend Pro: wat al is meegerekend en acht tegels met wat u nog navraagt, zoals dak, installatie en verzekering" loading="lazy">
+        <figcaption><strong>Aandachtspunten vóór de offerte.</strong> Wat Pro al meerekent en wat u nog navraagt bij installateur, constructeur en verzekeraar, per onderdeel afgevinkt.</figcaption>
+      </figure>
+      <figure>
+        <img class="beeld" src="img/pro-vve-offertes.webp" width="1280" height="1100" alt="Het scherm Offertes vergelijken in EnergieVriend Pro: twee offertes naast elkaar en naast de richtprijzen, met de prijs per Wp en de terugverdientijd" loading="lazy">
+        <figcaption><strong>Offertes naast elkaar.</strong> De prijs per Wp naast de richtprijzen, wat de VvE per jaar overhoudt en wat er in elke offerte staat.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -181,12 +203,13 @@
         <li>U probeert Pro 30 dagen, zonder iets te betalen of aan te maken.</li>
         <li>Daarna werkt Pro met een licentie voor één adviseur of bedrijf, voor een jaar.</li>
         <li>Een jaarlicentie kost € 290 excl. btw (€ 350,90 incl. btw). Na een jaar verlengt u tegen de dan geldende prijs; dat gaat niet vanzelf.</li>
-        <li>U vraagt de licentie aan per e-mail en betaalt op factuur. Daarna ontvangt u de licentiecode.</li>
-        <li>Pro Gebouwen (VvE's) is een aparte jaarlicentie bovenop Pro. De prijs hoort u bij de aanvraag.</li>
+        <li>U bestelt de licentie op de bestelpagina en betaalt vooraf via Mollie. De licentiecode krijgt u direct te zien en per e-mail, en de factuur komt ook per e-mail. Een licentie is er alleen voor bedrijven en organisaties.</li>
+        <li>Pro Gebouwen (VvE's) is een aparte jaarlicentie bovenop Pro. U vraagt die aan per e-mail; de prijs hoort u bij de aanvraag.</li>
       </ul>
       <div class="knoppen">
         <a class="knop" href="https://pro.energievriend.nl">Probeer 30 dagen</a>
-        <a class="knop rand" href="mailto:contact@energievriend.nl?subject=Licentie%20EnergieVriend%20Pro">Een licentie aanvragen</a>
+        <a class="knop rand" href="https://pro.energievriend.nl/bestel.html">Licentie bestellen</a>
+        <a class="knop rand" href="mailto:contact@energievriend.nl?subject=Licentie%20Pro%20Gebouwen">Pro Gebouwen aanvragen</a>
       </div>
     </div>
   </section>
