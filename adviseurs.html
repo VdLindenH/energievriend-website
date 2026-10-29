@@ -92,6 +92,10 @@
   .rapport { display: grid; grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
   @media (min-width: 720px) { .rapport { grid-template-columns: 1fr 1.1fr; } }
   .rapport .beeld { border-radius: 8px; }
+  /* Sfeerfoto's (Unsplash-licentie, bronnen in docs/vooraf-achtergrond.md van de app). */
+  .foto { width: 100%; height: auto; display: block; border-radius: 16px; object-fit: cover; background: var(--soft); }
+  .foto.kopfoto { aspect-ratio: 12 / 5; margin-bottom: 1.75rem; }
+  .foto.strook { aspect-ratio: 3 / 1; margin-bottom: 1rem; }
 
   footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 1rem; color: var(--muted); }
 </style>
@@ -106,6 +110,7 @@
     </nav>
   </header>
 
+  <img class="foto kopfoto" src="img/adviseurs-woningen.webp" width="1600" height="667" alt="" fetchpriority="high">
   <h1>Energieadvies voor adviseurs en energiecoaches</h1>
   <p class="onder">Reken bij het huisbezoek uit wat er voor deze woning loont en in welke volgorde, met uw eigen prijzen. Geef uw klant daarna een rapport in uw eigen huisstijl. Ook voor zonnepanelen op het dak van een VvE of een bedrijf.</p>
   <div class="knoppen">
@@ -178,6 +183,7 @@
 
   <section>
     <h2>Pro Gebouwen: VvE's en bedrijfsdaken</h2>
+    <img class="foto strook" src="img/adviseurs-bedrijfsdak.webp" width="1600" height="533" alt="" loading="lazy">
     <div class="blok">
       <p>Een opbrengstberekening voor het dak is snel gemaakt. Wat het bestuur wil weten, is lastiger: wat kost het per appartement, op de algemene meter of per appartement, en welke offerte is redelijk?</p>
       <p>Met Pro Gebouwen rekent u dat door zonder eigen spreadsheet, en maakt u er een rapport voor de ledenvergadering van, met een blad per appartement.</p>
