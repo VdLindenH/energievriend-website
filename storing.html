@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storingen EnergieVriend Pro</title>
+<meta name="description" content="Of er op dit moment een storing is bij EnergieVriend Pro.">
+<link rel="icon" href="img/icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Layout: één leeskolom, zelfde opbouw als het privacybeleid van MediRust. */
+  :root {
+    --bg: #f4f8f1;
+    --surface: #ffffff;
+    --ink: #13261a;
+    --muted: #4c5f52;
+    --brand: #2e7d32;
+    --accent: #ef7d1a;
+    --line: #d4e4cf;
+    --font: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+      --brand: #81c784; --accent: #ffa65c; --line: #284230; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
+    --brand: #81c784; --accent: #ffa65c; --line: #284230; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    padding-inline: 16px;
+    padding-block: 2.5rem 4rem;
+  }
+  main { max-width: 44rem; margin-inline: auto; }
+  a { color: var(--brand); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .terug { display: inline-block; margin-bottom: 1.5rem; font-size: 1rem; }
+  h1 { margin: 0 0 0.25rem; font-size: clamp(1.75rem, 5vw, 2.375rem); line-height: 1.2; color: var(--brand); }
+  .datum { margin: 0 0 2rem; color: var(--muted); font-size: 1rem; }
+  h2 { margin: 2.25rem 0 0.75rem; font-size: 1.375rem; line-height: 1.3; color: var(--brand); text-wrap: balance; }
+  p { margin: 0 0 0.9rem; }
+  ul { margin: 0 0 0.9rem; padding-left: 1.25rem; display: grid; gap: 0.45rem; }
+  .kort {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+  .kort p:last-child { margin-bottom: 0; }
+  strong { font-weight: 700; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 1rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <a class="terug" href="index.html">← Terug naar EnergieVriend</a>
+  <h1>Storingen<br>EnergieVriend Pro</h1>
+
+  <div class="kort" style="margin:24px 0">
+    <p><strong>Op dit moment zijn er geen storingen bekend.</strong></p>
+  </div>
+
+  <p>Doet Pro het niet? Uw klantgegevens staan in uw eigen browser en blijven bewaard. Uw licentie blijft geldig. Zodra Pro weer werkt, gaat u gewoon verder.</p>
+  <p>Mail aan <a href="mailto:contact@energievriend.nl">contact@energievriend.nl</a> kan tijdens een storing later aankomen.</p>
+
+  <footer>EnergieVriend is een app van <a href="https://vdlintelligence.nl">VDLIntelligence</a>.</footer>
+</main>
+</body>
+</html>
