@@ -8,7 +8,7 @@
 <link rel="icon" href="img/icoon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <style>
   /* Eén leeskolom met blokken, zelfde opbouw als medirust.nl; kleuren van het app-icoon. */
   :root {
@@ -22,19 +22,22 @@
     --accent-ink: #ffffff;
     --soft: #e3ece6;
     --line: #dce1db;
-    --font: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    --font: "Figtree", "Segoe UI", system-ui, sans-serif;
+    --font-kop: "Bricolage Grotesque", "Figtree", "Segoe UI", system-ui, sans-serif;
+    --band: #1f4a3a;
+    --sh: 0 12px 28px rgba(24,33,29,.24), 0 4px 10px rgba(24,33,29,.14);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #111915; --surface: #1a231e; --ink: #e8ece9; --muted: #a3afa8;
       --brand: #8fc2a8; --brand-ink: #111915; --accent: #f08a4b; --accent-ink: #1a1109; --soft: #1f2d26;
-      --line: #2c3a33; color-scheme: dark;
+      --line: #2c3a33; --band: #163a2d; --sh: 0 12px 28px rgba(0,0,0,.55), 0 4px 10px rgba(0,0,0,.4); color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
     --bg: #111915; --surface: #1a231e; --ink: #e8ece9; --muted: #a3afa8;
     --brand: #8fc2a8; --brand-ink: #111915; --accent: #f08a4b; --accent-ink: #1a1109; --soft: #1f2d26;
-    --line: #2c3a33; color-scheme: dark;
+    --line: #2c3a33; --band: #163a2d; --sh: 0 12px 28px rgba(0,0,0,.55), 0 4px 10px rgba(0,0,0,.4); color-scheme: dark;
   }
   * { box-sizing: border-box; }
   body {
@@ -44,10 +47,9 @@
     font-family: var(--font);
     font-size: 1.125rem;
     line-height: 1.65;
-    padding-inline: 16px;
-    padding-block: 2rem 4rem;
+    padding: 0;
   }
-  main { max-width: 52rem; margin-inline: auto; }
+  main { max-width: calc(52rem + 32px); margin-inline: auto; padding: 0 16px 4rem; }
   a { color: var(--brand); }
   a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
   h1, h2, h3 { color: var(--brand); line-height: 1.25; text-wrap: balance; }
@@ -121,10 +123,30 @@
   .versies .volledig { border: 2px solid var(--brand); }
 
   footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 1rem; color: var(--muted); }
+
+  /* Letters, band en schaduw (kleurenkeuze 18-11-2026): Bricolage Grotesque voor koppen, Figtree voor tekst,
+     donkergroene band bovenaan en tegels met een sterke schaduw. */
+  h1, h2, h3, .merk { font-family: var(--font-kop); }
+  h1 { font-weight: 800; }
+  .band { background: var(--band); color: #fff; padding: 1.25rem 16px 4.75rem; }
+  .binnen { max-width: 52rem; margin-inline: auto; }
+  .band a { color: #fff; }
+  .band h1, .band .merk, .band .merk a { color: #fff; }
+  .band .merk .pro { color: #f4b184; }
+  .band .menu a[aria-current="page"] { background: rgba(255,255,255,.18); color: #fff; }
+  .band .menu a.pro, .band .menu a.thuis { border-color: rgba(255,255,255,.55); }
+  .band .menu a.pro:hover, .band .menu a.thuis:hover { background: rgba(255,255,255,.14); }
+  .band .onder, .band .aankoop, .band .prijsregel, .band .datum { color: #dbe8e0; }
+  .band .labels li { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.28); color: #fff; }
+  .band .knop.rand { color: #fff; border-color: rgba(255,255,255,.7); }
+  .band .vonk { box-shadow: 0 14px 34px rgba(0,0,0,.35); }
+  main > :first-child { margin-top: -2.75rem !important; position: relative; }
+  .blok, .kort, .voorwie { box-shadow: var(--sh); }
+  .schermen img, .beeld, .foto { box-shadow: var(--sh); }
 </style>
 </head>
 <body>
-<main>
+<div class="band"><div class="binnen">
   <header class="kop">
     <div class="merk"><img src="img/icoon.png" alt="">EnergieVriend</div>
     <nav class="menu" aria-label="Hoofdmenu">
@@ -148,6 +170,8 @@
     </div>
     <img class="vonk" src="img/vonk.png" alt="Vonk, de vos van EnergieVriend, met een zonnepaneel op de kop">
   </div>
+</div></div>
+<main>
 
   <section aria-labelledby="pro-kop">
     <div class="blok prokaart">
