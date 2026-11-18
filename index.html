@@ -12,28 +12,29 @@
 <style>
   /* Eén leeskolom met blokken, zelfde opbouw als medirust.nl; kleuren van het app-icoon. */
   :root {
-    --bg: #f4f8f1;
+    --bg: #f5f6f3;
     --surface: #ffffff;
-    --ink: #13261a;
-    --muted: #4c5f52;
-    --brand: #2e7d32;
+    --ink: #18211d;
+    --muted: #5a6660;
+    --brand: #1f4a3a;
     --brand-ink: #ffffff;
-    --accent: #ef7d1a;
-    --soft: #e6f2e2;
-    --line: #d4e4cf;
+    --accent: #c24f17;
+    --accent-ink: #ffffff;
+    --soft: #e3ece6;
+    --line: #dce1db;
     --font: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
-      --brand: #81c784; --brand-ink: #0e1a11; --accent: #ffa65c; --soft: #1b3221;
-      --line: #284230; color-scheme: dark;
+      --bg: #111915; --surface: #1a231e; --ink: #e8ece9; --muted: #a3afa8;
+      --brand: #8fc2a8; --brand-ink: #111915; --accent: #f08a4b; --accent-ink: #1a1109; --soft: #1f2d26;
+      --line: #2c3a33; color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0e1a11; --surface: #15261a; --ink: #e6f1e7; --muted: #a6baa9;
-    --brand: #81c784; --brand-ink: #0e1a11; --accent: #ffa65c; --soft: #1b3221;
-    --line: #284230; color-scheme: dark;
+    --bg: #111915; --surface: #1a231e; --ink: #e8ece9; --muted: #a3afa8;
+    --brand: #8fc2a8; --brand-ink: #111915; --accent: #f08a4b; --accent-ink: #1a1109; --soft: #1f2d26;
+    --line: #2c3a33; color-scheme: dark;
   }
   * { box-sizing: border-box; }
   body {
@@ -78,7 +79,7 @@
     .held { grid-template-columns: 1.6fr 1fr; }
   }
   .knop {
-    display: inline-block; background: var(--brand); color: var(--brand-ink);
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
     text-decoration: none; font-weight: 700; padding: 0.8rem 1.5rem; border-radius: 999px;
     margin: 0.5rem 0 0.75rem;
   }
